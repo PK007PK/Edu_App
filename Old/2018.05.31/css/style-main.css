@@ -1,9 +1,0 @@
-@charset "utf-8";
-/* CSS Document */
-
-img {
-    opacity: 0.35;
-    filter: alpha(opacity=35); /* For IE8 and earlier */
-	width: 328px;
-	height: 218.667px;
-}
