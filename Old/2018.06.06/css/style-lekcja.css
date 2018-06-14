@@ -1,0 +1,221 @@
+form-control@charset "utf-8";
+/* CSS Document */
+
+div.main {
+	position: relative;
+	display: block;
+	background-color: white;
+	z-index: 9000;
+	margin: 0 auto;
+}
+
+div.learn {
+	position: relative;
+	margin: 0 auto;
+}
+
+div.learn > div {
+	float: left;
+	position: relative;
+	display: block;
+	background-color: rgba(173,216,230,0.5);
+	width: 22%;
+	height: 150px;
+	margin: 10px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+img.learn {
+	width: 45px;
+}
+
+/* Karta ------------------------------------------------------------------ */
+
+
+div.karta {
+	display: none;
+	position: relative;
+	width: 250px;
+	height: 350px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	z-index: 1;
+	
+}
+
+img.karta {
+	width:50%;
+	margin-top: 25px;
+}
+
+input.karta {
+	position: absolute;
+	left: 10px;
+	width: 230px;
+	text-align: center;
+}
+
+button.karta {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	width: 230px;
+	display: none;
+}
+
+
+/* Test ------------------------------------------------------------------ */
+
+div.test > div {
+	float: left;
+	position: relative;
+	display: block;
+	background-color: rgba(173,216,230,0.5);
+	text-align: center;
+	width: 200px;
+	height: 150px;
+	margin: 10px;
+	padding-top: 20px;
+	}
+
+img.test {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 30px;
+}
+
+p.test {
+	font-size: 15px;
+}
+
+.test input {
+	position: absolute;
+	box-sizing: border-box;
+	bottom: 0;
+	left: 0;
+	display: block;
+	margin: 0;
+	text-align: center;
+}
+
+
+h5.test {
+	clear: both;
+	display: block;
+	margin: 5px;
+	font-weight: bold;
+}
+
+
+div#check_test_div {
+	height: 60px;
+	background-color: white;
+}
+
+.test button {
+	display: block;
+	width: 120px;
+	height: 30px;
+
+}
+
+.test button.disabled {
+	background-color: red;
+
+}
+
+.test button.enabled {
+	background-color: forestgreen;
+
+}
+
+/* saper ------------------------------------------------------------------ */
+
+
+div.saper {
+
+	display: none;
+}
+
+#saper_obrazek, #saper_obrazek2, #saper_obrazek3 
+{
+	width: 70%;
+}
+
+#saper_haslo {
+font-family: 'Anonymous Pro', monospace;
+font-size: 1.3rem;
+}
+	
+#clear {
+	clear: both;
+}
+
+div.litera {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	padding: 3px;
+	margin: 2px;
+	border: 2px solid grey;
+	cursor: pointer;
+	/*float: left;*/
+}
+
+.float-none {
+    clear: both;
+}
+
+.litera:hover {
+	background-color: #222222;
+	color: white;
+	border: 3px solid white;
+}
+
+.reset {
+	color: green;
+	cursor: pointer;
+	font-size: 4rem;
+}
+
+.reset:hover
+{
+	color: black;
+}
+
+/* memory ------------------------------------------------------------------ */
+
+#memory_body
+{
+	display: none;
+}
+
+.col > div.memory {
+    width: 90%;
+    height: 150px;
+    background-size: 45px;
+    background-position: center;
+    background-image: url(../images/question.svg);
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col > div.memory:hover {
+    border: 1px solid green;
+    background-color: rgba(21,178,119,0.5);
+    transition: all .3s ease-in-out;
+}
+
+.inactive {
+    background-color: rgba(173,216,230,0.5);
+}
+
+.active {
+    background-color: rgba(21,178,119,0.5);
+    border: 1px solid green;
+}
