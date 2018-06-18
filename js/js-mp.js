@@ -10,18 +10,41 @@ function englishMainPage()
 	let docFragment = document.createDocumentFragment();
 				
 	let divElement = document.createElement('div'); 	//1
-		divElement.setAttribute('class', 'row my-2')
-		
+		divElement.class = 'row my-2';
+	
+	let winSize = window.innerWidth;
+	console.log(winSize);	
+
 	for (let i=0; i < elementsMag.length; i++) 
     {
-		
-		if (!(i % 3)) 
-        {
-
-			divElement = document.createElement('div'); 	//1
-			divElement.setAttribute('class', 'row my-3')
+			
+		if (winSize < 525) 
+		{
+			if (!(i % 1))
+			{
+				divElement = document.createElement('div'); 	//1
+				divElement.setAttribute('class', 'row my-3')
+			}
 		}
-
+		
+		if (winSize < 990)
+		{
+			if (!(i % 2)) 
+			{
+				divElement = document.createElement('div'); 	//1
+				divElement.setAttribute('class', 'row my-3');
+			}
+		}
+		
+		if (winSize >= 990)
+		{
+			if (!(i % 3)) 
+			{
+				divElement = document.createElement('div'); 	//1
+				divElement.setAttribute('class', 'row my-3');
+			}
+		}
+		
 		let div2Element = document.createElement('div'); //2 
 			div2Element.setAttribute('class', 'col-xs-12 col-md-6 col-lg-4');
 
