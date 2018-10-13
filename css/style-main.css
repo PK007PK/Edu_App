@@ -8,6 +8,11 @@ img {
 	height: 218.667px;
 }
 
+div.card {
+    max-width: 30%;
+    min-width: 200px;
+}
+
 div.card:hover {
     background-color: rgba(21,178,119,0.5);
     border: 1px solid green;

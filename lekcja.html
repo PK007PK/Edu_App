@@ -15,31 +15,43 @@
 
 <body onload="nauka()" id="startLekcji">
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-		<div class="container">
-			<a href="index.html" class="nav-item navbar-brand">SUPER klasa</a>
-			<form id="mainForm">
-			    <div>
-					<select name="unitSelect" id="unitSelect"></select>
-				</div>	
-            </form>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			
-			<div class="collapse navbar-collapse" id="navbarContent">
-				<div class="navbar-nav ml-auto">
-					<a href="#" class="nav-item nav-link">menu lekcji</a>
-					<a href="#" class="nav-item nav-link">moje konto</a>
+			<div class="container">
+				<a href="index.html" class="nav-item navbar-brand">SUPER klasa</a>
+				<form id="mainForm">
+					<div>
+						<select name="unitSelect" id="unitSelect"></select>
+					</div>	
+				</form>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<div class="navbar-nav ml-auto">
+						<a href="#" class="nav-item nav-link">moje konto</a>
+					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
 
 	<div class="container">
+		
 		<div class="row ">
-			<div class="main col-9">
-				<div class="learn" id="learn_div"></div>
-				<div class="test" id="test_div"></div>
+
+			<div class="col-12 col-sm-3 text-center">
+				<div class="list-group mt-2" id="menuLekcji">
+						<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_nauka">Nauka słówek</a>
+					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_memory">Gra w Memory</a>
+					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_saper">Gra w Hackera</a>
+						<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_polang1">Przetłumacz na polski</a>
+					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_polang2">Przetłumacz na angielski</a>
+					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_sprawdzian">Sprawdzian</a>
+				</div>
+			</div>
+
+			<div class="main col-12 col-sm-9">
+				<div class="row learn d-flex justify-content-center" id="learn_div"></div>
+				<div class="row test d-flex justify-content-center" id="test_div"></div>
 				<div class="karta" id="div_karta"></div>
 				<div class="saper text-center" id="saper_body">
 					<div class="card-body ">
@@ -58,34 +70,7 @@
                         </div>
                     </div>
 				</div>
-				<div class="memory board" id="memory_body">
-				   <div class='card memory inactive' id='memo0'></div> 
-                   <div class='card memory inactive' id='memo1'></div> 
-                   <div class='card memory inactive' id='memo2'></div> 
-                   <div class='card memory inactive' id='memo3'></div> 
-                   <div class='card memory inactive' id='memo4'></div> 
-                   <div class='card memory inactive' id='memo5'></div> 
-                   <div class='card memory inactive' id='memo6'></div> 
-                   <div class='card memory inactive' id='memo7'></div> 
-                   <div class='card memory inactive' id='memo8'></div> 
-                   <div class='card memory inactive' id='memo9'></div> 
-                   <div class='card memory inactive' id='memo10'></div> 
-                   <div class='card memory inactive' id='memo11'></div> 
-
-                   <div class="alert score" id="punkty">Licznik rund: 0</div>                                     
- 				</div>
-			</div>
-						
-			<div class="col-3 text-center">
-				<div class="list-group mt-2" id="menuLekcji">
-  					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_nauka">Nauka słówek</a>
-					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_memory">Gra w Memory</a>
-					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_saper">Gra w Hackera</a>
-  					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_polang1">Przetłumacz na polski</a>
-				    <a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_polang2">Przetłumacz na angielski</a>
-					<a href="#startLekcji" class="list-group-item list-group-item-action" id="menu_sprawdzian">Sprawdzian</a>
-
-				</div>
+				<div class="row memory board d-flex justify-content-center" id="memory_body"></div>
 			</div>
 		</div>
 	</div>

@@ -41,8 +41,8 @@ function unitSelect ()
     {
 		
         let optionElement = document.createElement('option'); 
-			optionElement.setAttribute('value', i);
-        if (i == unitSelected) optionElement.setAttribute('selected', 'selected'); 
+			optionElement.value = i;
+        if (i == unitSelected) optionElement.selected = 'selected'; 
         let optionText = document.createTextNode(elementsMag[i][1][0].nazwaZbioru);
 		optionElement.appendChild(optionText);
 		docFragment.appendChild(optionElement);
@@ -88,11 +88,7 @@ function przypisanieswiatelka()
 
 przypisanieswiatelka();
 
-//document.getElementById('logo').addEventListener('click', resetMenu);
-
-
 //Reset menu -------------------------------------------------
-
 
 function resetMenu() 
 {
@@ -107,14 +103,20 @@ function resetMenu()
 	while (list.hasChildNodes()) 
     {
 		list.removeChild(list.firstChild);
-    }
+	}
+	
+	let momory_body = document.getElementById('memory_body')
+	
+	while (momory_body.hasChildNodes()) 
+    {
+		//momory.firstChild.remove();
+		momory_body.removeChild(momory_body.firstChild);
+	}
 	
 	document.querySelector('div.karta').style.display = 'none';
 }
 
-
 // Funkcja odtwarzania dźwięku ---------------------------------
-
 
 function sayIt(query) 
 {
@@ -126,7 +128,6 @@ function sayIt(query)
 
 	
 //Losowanie liczby z określonego przedziału ------------------
-
 	
 function losowanie(from_arg,to_arg)
 { 
@@ -135,11 +136,9 @@ function losowanie(from_arg,to_arg)
 	
 //Sprawdzenie tłumaczenia ------------------------------------
 
-
 function sprawdzenie(sprawdzenie_arg) 
 {
-	
-    let usersInput;
+	let usersInput;
 	
 	usersInput = document.getElementById('input_karta').value.toLowerCase();
 	
@@ -187,7 +186,6 @@ function sprawdzenie(sprawdzenie_arg)
 		document.getElementById('img_karta').setAttribute('src', elements[randomElementNr].image);
 		
 	}
-	
 }
 
 //Funkcja tłumaczenia z polskiego na angielski i z angielskiego na polski---------------
@@ -196,24 +194,22 @@ function polang(polang_arg) {
 
 	resetMenu();
 	
-	//document.getElementById('div_karta').removeAttribute('onclick');
 	document.getElementById('div_karta').style.backgroundColor = 'rgba(173,216,230,0.5)';
 	document.querySelector('div.karta').style.display = 'block';
-	//document.querySelector('div.karta_body').style.display = 'block';
 	
 	randomElementNr = losowanie(0, elements.length);
 	
 	let divElement = document.createElement('div'); 	
-		divElement.setAttribute('class', 'card-body');
-		divElement.setAttribute('id', 'div_karta_body');
+		divElement.className = 'card-body';
+		divElement.id = 'div_karta_body';
 	
 	document.getElementById('div_karta').appendChild(divElement);	
 	
 	let docFragment = document.createDocumentFragment();
 	
 	let h1Element = document.createElement('h6'); 	
-		h1Element.setAttribute('class', 'karta card-title');
-		h1Element.setAttribute('id', 'h1_karta');
+		h1Element.className = 'karta card-title';
+		h1Element.id = 'h1_karta';
 			
 		if (polang_arg === 1) {var trescH1 = document.createTextNode('Napisz po angielsku:');}
 		if (polang_arg === 2) {var trescH1 = document.createTextNode('Napisz po polsku:');}
@@ -222,8 +218,8 @@ function polang(polang_arg) {
 		docFragment.appendChild(h1Element);
 	
 	let pElement = document.createElement('p');
-		pElement.setAttribute('class', 'karta');
-		pElement.setAttribute('id', 'p_karta');
+		pElement.className = 'karta';
+		pElement.id = 'p_karta';
 	
 		if (polang_arg === 1) {var trescP1 = document.createTextNode( elements[randomElementNr].nazwa );}
 		if (polang_arg === 2) {var trescP1 = document.createTextNode( elements[randomElementNr].name );}
@@ -232,10 +228,11 @@ function polang(polang_arg) {
 		docFragment.appendChild(pElement);														 
 																 
 	let inpElement = document.createElement('input');
-		inpElement.setAttribute('class', 'karta');
-		inpElement.setAttribute('id', 'input_karta');											inpElement.setAttribute('type', 'text');	
-		inpElement.setAttribute('autocomplete', 'off');
-		inpElement.setAttribute('placeholder', 'tu wpisz tłumaczenie');
+		inpElement.className = 'karta';
+		inpElement.id = 'input_karta';											
+		inpElement.type = 'text';	
+		inpElement.autocomplete = 'off';
+		inpElement.placeholder = 'tu wpisz tłumaczenie';
 		inpElement.autofocus = 'true';
 	
 		if (polang_arg === 1) { inpElement.setAttribute('onchange', 'sprawdzenie('+ 1 +')'); }
@@ -243,9 +240,10 @@ function polang(polang_arg) {
 	
 		docFragment.appendChild(inpElement);
 
-	let buttonElement = document.createElement('button');											buttonElement.setAttribute('display', 'none'); 
-		buttonElement.setAttribute('class', 'karta'); 
-		buttonElement.setAttribute('id', 'input_karta'); 
+	let buttonElement = document.createElement('button');											
+		buttonElement.displa = 'none'; 
+		buttonElement.className = 'karta'; 
+		buttonElement.id = 'input_karta'; 
 		if (polang_arg === 1) { buttonElement.setAttribute('onclick', 'polang('+ 1 +')');}
 		if (polang_arg === 2) { buttonElement.setAttribute('onclick', 'polang('+ 2 +')');}
 	
@@ -254,10 +252,10 @@ function polang(polang_arg) {
 	document.getElementById('div_karta_body').appendChild(docFragment);					   
 	
 	let imgElement = document.createElement('img');	
-		imgElement.setAttribute('class', 'karta card-img-bottom'); 
-		imgElement.setAttribute('id', 'img_karta'); 
-		if (polang_arg === 1) { imgElement.setAttribute('src', elements[randomElementNr].image); }
-		if (polang_arg === 2) { imgElement.setAttribute('src', 'images/question.svg'); }
+		imgElement.className = 'karta card-img-bottom'; 
+		imgElement.id = 'img_karta'; 
+		if (polang_arg === 1) imgElement.src = elements[randomElementNr].image;
+		if (polang_arg === 2) imgElement.src = 'images/question.svg';
 		
 	document.getElementById('div_karta').appendChild(imgElement);
 }
@@ -283,9 +281,7 @@ function checkInput (checkInput_arg) {
 	}, 2000);
 }
 
-
 //Wypisanie wszystkich kafelków ze słówkami do nauki ---------
-
 
 function nauka() {
 	
@@ -296,12 +292,12 @@ function nauka() {
 	for (var i=0; i < loopMax; i++) {
 				
 		var divElement = document.createElement('div'); 	
-			divElement.setAttribute('id', 'divnr' + i);
-			divElement.setAttribute('class', 'card nauka');
+			divElement.id = 'divnr' + i;
+			divElement.className = 'card nauka';
 								
 		var pElement = document.createElement('p');
-			pElement.setAttribute('class', 'pl');
-			pElement.setAttribute('id', 'pElement' + i);
+			pElement.className = 'pl';
+			pElement.id = 'pElement' + i;
 		
 		var tresc = document.createTextNode(elements[i].nazwa);		
 		
@@ -309,8 +305,8 @@ function nauka() {
 		divElement.appendChild(pElement);						
 				
 		var imgElement = document.createElement('img');	
-		    imgElement.setAttribute('src', elements[i].image);	
-			imgElement.setAttribute('class', 'learn');
+		    imgElement.src = elements[i].image;	
+			imgElement.className = 'learn';
 		
 		divElement.appendChild(imgElement);
 				
@@ -321,7 +317,6 @@ function nauka() {
 	}
 	
 }
-
 
 //Funkcja pomocnicza do funkcji sprawdzianu. Odblokowanie przycisku "Sprawdź" po podstawieniu wszystkich pól sprawdzianu ----
 
@@ -388,8 +383,8 @@ function sprawdzian() {
 		if (i===0 || i===ilePol) {
 		
 			let h1Element = document.createElement('h5'); 	
-				h1Element.setAttribute('class', 'test');
-				h1Element.setAttribute('id', 'h1_test' + i );
+				h1Element.className = 'test';
+				h1Element.id = 'h1_test' + i;
 			
 			if (i===0) 	{var trescH1 = document.createTextNode('Przetłumacz na język angielski:');}
 			if (i===ilePol) {var trescH1 = document.createTextNode('Przetłumacz na język polski:');}
@@ -401,29 +396,29 @@ function sprawdzian() {
 		// Tu tworzę treść, p, divy, inputy i img
 		
 		let divElement = document.createElement('div'); 	
-			divElement.setAttribute('class', 'test card');
-			divElement.setAttribute('id', 'div_test_nr' + i);
+			divElement.className = 'test card';
+			divElement.id = 'div_test_nr' + i;
 					
 		let pElement = document.createElement('p');
-			pElement.setAttribute('class', 'test');
-			pElement.setAttribute('id', 'p_test_Element' + i);
+			pElement.className = 'test';
+			pElement.id = 'p_test_Element' + i;
 		
 		if (i<ilePol) { var tresc = document.createTextNode(choosenToTest[i].nazwa);} else {var tresc = document.createTextNode(choosenToTest[i].name);}		
 						
 		let imgElement = document.createElement('img');	
-			imgElement.setAttribute('class', 'test');
-			imgElement.setAttribute('id', 'img_test_Element' + i);
+			imgElement.className = 'test';
+			imgElement.id = 'img_test_Element' + i;
 
 		if (i<ilePol) {
-			imgElement.setAttribute('src', choosenToTest[i].image);
-			} else {imgElement.setAttribute('src', 'images/question.svg');}
+			imgElement.src = choosenToTest[i].image;
+			} else {imgElement.src = 'images/question.svg';}
 
 		let inpElement = document.createElement('input');
-			inpElement.setAttribute('class', 'test form-control');
-			inpElement.setAttribute('value', '');
-			inpElement.setAttribute('id', 'inp_test_nr' + i);
-			inpElement.setAttribute('autocomplete', 'off');
-			inpElement.setAttribute('placeholder', 'tu wpisz tłumaczenie');
+			inpElement.className = 'test form-control';
+			inpElement.value = '';
+			inpElement.id = 'inp_test_nr' + i;
+			inpElement.autocomplete = 'off';
+			inpElement.placeholder = 'tu wpisz tłumaczenie';
 			inpElement.setAttribute('onchange', 'hasValue()');
 		
 		// Podłączam utworzone kafelki i ich zawartość pod diva
@@ -441,8 +436,8 @@ function sprawdzian() {
 	// Tworzę kafelek z buttonem i pole do komentarza tekstowego
 	
 	h1Element = document.createElement('h5'); 	
-	h1Element.setAttribute('class', 'test');
-	h1Element.setAttribute('id', 'h1_test');
+	h1Element.className = 'test';
+	h1Element.id = 'h1_test';
 			
 	trescH1 = document.createTextNode('Po wpisaniu wszystkich odpowiedzi kliknij przycisk "Sprawdź":');
 					
@@ -450,12 +445,12 @@ function sprawdzian() {
 	document.getElementById('test_div').appendChild(h1Element);
 		
 	let divElement = document.createElement('div'); 	
-		divElement.setAttribute('class', 'test');
-		divElement.setAttribute('id', 'check_test_div');
+		divElement.className = 'test';
+		divElement.id = 'check_test_div';
 		
 	let buttonElement = document.createElement('button');
-		buttonElement.setAttribute('class', 'test disabled');
-		buttonElement.setAttribute('id', 'check_test_button');
+		buttonElement.className = 'test disabled';
+		buttonElement.id = 'check_test_button';
 		buttonElement.setAttribute('onclick', 'testCheck()');
 		buttonElement.setAttribute('background', 'testCheck()');
 		buttonElement.disabled = 'true';
@@ -525,17 +520,15 @@ function testCheck() {
 	test_comment += "<br>" + "W wyniku tego testu ilość punktów zmieniła się o : " + pointsChange;
 	test_comment += "<br>" + "Końcowa ilość punktów: " + points;
 	
-	//document.getElementById('points').innerHTML = "Punkty: " + points;
 	document.getElementById('h1_test').innerHTML = "Rozwiązanie:";
 	document.getElementById('check_test_div').style.display = "none";
-
 	
 	var divElement = document.createElement('div'); 	
-		divElement.setAttribute('id', 'div_test_comment');
+		divElement.id = 'div_test_comment';
 	
 	var pElement = document.createElement('p');
-		pElement.setAttribute('class', 'summary');
-		pElement.setAttribute('id', 'p_summary');
+		pElement.className = 'summary';
+		pElement.id = 'p_summary';
 		
 	var tresc = document.createTextNode("");		
 		
@@ -685,11 +678,31 @@ function memory ()
     
     let choosenToPlay = new Array();
     let choosenToPlay2 = new Array();
-    
+	
+	resetMenu();
+
     function przygotowanieplanszy () 
     {
-        resetMenu();
-        document.getElementById('memory_body').style.display = 'block';
+		let board = document.createDocumentFragment();
+
+		document.getElementById('memory_body').style.display = 'block';
+		for (i=0; i<12; i++) 
+		{
+			let divElement = document.createElement('div');
+				divElement.className = 'card memory inactive';
+				divElement.id = 'memo'+i;
+			
+				board.appendChild(divElement);
+		}
+		
+		let alertDiv = document.createElement('div')
+			alertDiv.className = 'alert score';
+			alertDiv.id = 'punkty';
+			alertDiv.innerText = 'Licznik rund: 0';
+		
+		document.getElementById('memory_body').appendChild(board);
+		document.getElementById('memory_body').appendChild(alertDiv);
+
     }
     
     przygotowanieplanszy ();
@@ -831,9 +844,7 @@ function memory ()
                      $('#punkty').html('Licznik rund: ' + turnCounter);
                 }
             }
-            
-        }
-        
+		}
     }
     
     //Przypisanie odwrocenia----------------------------------    

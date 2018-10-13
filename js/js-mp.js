@@ -8,73 +8,37 @@ sessionStorage.lekcja = 0;
 function englishMainPage() 
 {
 	let docFragment = document.createDocumentFragment();
-				
-	let divElement = document.createElement('div'); 	//1
-		divElement.class = 'row my-2';
 	
-	let winSize = window.innerWidth;
-	console.log(winSize);	
-
+	
 	for (let i=0; i < elementsMag.length; i++) 
     {
-			
-		if (winSize < 525) 
-		{
-			if (!(i % 1))
-			{
-				divElement = document.createElement('div'); 	//1
-				divElement.setAttribute('class', 'row my-3')
-			}
-		}
 		
-		if (winSize < 990)
-		{
-			if (!(i % 2)) 
-			{
-				divElement = document.createElement('div'); 	//1
-				divElement.setAttribute('class', 'row my-3');
-			}
-		}
-		
-		if (winSize >= 990)
-		{
-			if (!(i % 3)) 
-			{
-				divElement = document.createElement('div'); 	//1
-				divElement.setAttribute('class', 'row my-3');
-			}
-		}
-		
-		let div2Element = document.createElement('div'); //2 
-			div2Element.setAttribute('class', 'col-xs-12 col-md-6 col-lg-4');
-
 		let div3Element = document.createElement('div'); //3 
-			div3Element.setAttribute('class', 'card');	
+			div3Element.className = 'card m-2 float-left';	
 
 		let imgElement = document.createElement('img'); //4
-			imgElement.setAttribute('class', 'card-img-top');
-			imgElement.setAttribute('src', elementsMag[i][1][0].image);
-			imgElement.setAttribute('class', 'card-img-top');
+			imgElement.src = elementsMag[i][1][0].image;
+			imgElement.className = 'card-img-top';
 
 		let div4Element = document.createElement('div'); //5
-			div4Element.setAttribute('class', 'card-img-overlay');
+			div4Element.className = 'card-img-overlay';
 
 		let h4Element = document.createElement('h4'); //6
-			h4Element.setAttribute('class', 'card-title');
+			h4Element.className = 'card-title';
 
 		let trescH4 = document.createTextNode(elementsMag[i][1][0].opis)
 		h4Element.appendChild(trescH4);		
 
 		let pElement = document.createElement('p');  // 7
-			pElement.setAttribute('class', 'card-text');
+			pElement.className = 'card-text';
 
 		let trescP = document.createTextNode(elementsMag[i][1][0].polecenie)
 		pElement.appendChild(trescP);	
 
 		let aElement = document.createElement('a');  // 8 
-			aElement.setAttribute('class', 'btn btn-xs-sm btn-md-lg btn-primary');
-			aElement.setAttribute('href', 'lekcja.html');
-			aElement.setAttribute('id', 'link'+i);
+			aElement.className = 'btn btn-xs-sm btn-md-lg btn-primary';
+			aElement.href = 'lekcja.html';
+			aElement.id = 'link'+i;
 					
 		let trescA = document.createTextNode('Przejdź do lekcji');
 		aElement.appendChild(trescA);	
@@ -85,17 +49,54 @@ function englishMainPage()
 
 		div3Element.appendChild(imgElement);
 		div3Element.appendChild(div4Element);
+		docFragment.appendChild(div3Element);
 
-		div2Element.appendChild(div3Element);
-		divElement.appendChild(div2Element);
-				
-		docFragment.appendChild(divElement);
 	}
 	
     document.getElementById('angielski').appendChild(docFragment);
 }
 
 englishMainPage();
+
+
+/*
+let elementE = 
+{
+	initE: function(klasaE, idE) 
+	{
+		this.klasaE = klasaE;
+		this.idE = idE;
+	}
+}
+
+let elementP = Object.create(elementE);
+	
+	elementP.initP = function(trescP) 
+		{
+			this.trescP = trescP;
+		};
+
+	elementP.createP = function()
+		{
+			let pElement = document.createElement('p');
+				pElement.className = this.klasa;
+
+			let trescP = document.createTextNode(this.trescP);
+			pElement.appendChild(trescP);
+			return pElement;
+		};
+
+
+
+console.log(elementE);
+console.log(elementP);
+
+var p1 = Object.create(elementP);
+	p1.initE('klasa1', 'identyfikator');
+	p1.initP("ala ma kota");
+	p1.createP();  // <p class="undefined">ala ma kota</p>
+*/
+
 
 //-------------------------*linki------------------
 // Podłączenie pod buttony na stronie głównej funkcji, która sprawdza i zapisuje w który z nich kliknięto. 
@@ -137,8 +138,8 @@ function unitSelect ()
     {
 		
         let optionElement = document.createElement('option'); 
-			optionElement.setAttribute('value', i);
-        if (i == unitSelected) optionElement.setAttribute('selected', 'selected'); 
+			optionElement.value = i;
+        if (i == unitSelected) optionElement.selected = 'selected'; 
         let optionText = document.createTextNode(elementsMag[i][1][0].nazwaZbioru);
 		optionElement.appendChild(optionText);
 		docFragment.appendChild(optionElement);

@@ -1,4 +1,4 @@
-form-control@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 
 div.main {
@@ -19,7 +19,7 @@ div.learn > div {
 	position: relative;
 	display: block;
 	background-color: rgba(173,216,230,0.5);
-	width: 22%;
+	width: 160px;
 	height: 130px;
 	margin: 10px;
 	text-align: center;
@@ -112,6 +112,7 @@ p.test {
 h5.test {
 	clear: both;
 	display: block;
+	width: 100%;
 	margin: 5px;
 	font-weight: bold;
 }
@@ -201,19 +202,22 @@ div.litera {
 }
 
 .board > div.memory {
-    width: 22%;
+    width: 160px;
     height: 130px;
     margin: 10px;
     background-size: 45px;
     background-position: center;
     background-image: url(../images/question.svg);
     background-repeat: no-repeat;
-    margin: 10px;
     float: left;
 	position: relative;
     padding-top: 20px;
 }
 
+#punkty {
+	width: 100%;
+	position: relative;
+}
 
 .board > div.memory:hover {
     border: 1px solid green;

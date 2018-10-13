@@ -41,6 +41,50 @@ let kolory = [
 ];
 
 
+
+
+
+let u2liczby = [
+
+	[
+		{ nazwa: 'zero', name: 'zero', image: 'images/unit2numbers/zero.svg' },
+		{ nazwa: 'jeden', name: 'one', image: 'images/unit2numbers/one.svg' },
+		{ nazwa: 'dwa', name: 'two', image: 'images/unit2numbers/two.svg' },
+		{ nazwa: 'trzy', name: 'three', image: 'images/unit2numbers/three.svg' },
+		{ nazwa: 'cztery', name: 'four', image: 'images/unit2numbers/four.svg' },
+		{ nazwa: 'pięć', name: 'five', image: 'images/unit2numbers/five.svg' },
+		{ nazwa: 'sześć', name: 'six', image: 'images/unit2numbers/six.svg' },
+		{ nazwa: 'siedem', name: 'seven', image: 'images/unit2numbers/seven.svg' },
+		{ nazwa: 'osiem', name: 'eight', image: 'images/unit2numbers/eight.svg' },
+		{ nazwa: 'dziewięć', name: 'nine', image: 'images/unit2numbers/nine.svg' },
+		{ nazwa: 'dziesięć', name: 'ten', image: 'images/unit2numbers/ten.svg' },
+	],
+
+	[
+		{ nazwaZbioru: 'Unit 2. Liczby', opis: 'Liczby', polecenie: 'Naucz się cyferek', image: 'images/numbers.jpg' },
+	]
+];
+
+
+let u2zwierzeta = [
+
+	[
+		{ nazwa: 'tygrysek', name: 'baby tiger', image: 'images/unit2africananimals/baby_tiger.svg' },
+		{ nazwa: 'słoń', name: 'elephant', image: 'images/unit2africananimals/elephant.svg' },
+		{ nazwa: 'żyrafa', name: 'giraffe', image: 'images/unit2africananimals/giraffe.svg' },
+		{ nazwa: 'hipopotam', name: 'hippo', image: 'images/unit2africananimals/hippo.svg' },
+		{ nazwa: 'lampart', name: 'leopard', image: 'images/unit2africananimals/leopard.svg' },
+		{ nazwa: 'nosorożec', name: 'rhino', image: 'images/unit2africananimals/rhino.svg' },
+		{ nazwa: 'tygrys', name: 'tiger', image: 'images/unit2africananimals/tiger.svg' },
+		{ nazwa: 'zebra', name: 'zebra', image: 'images/unit2africananimals/zebra.svg' },
+	],
+
+	[
+		{ nazwaZbioru: 'Unit 2. Zwierzęta afrykańskie', opis: 'Zwierzęta afrykańskie', polecenie: 'Poznaj zwierzęta egzotycne', image: 'images/africananimals.jpg' },
+	]
+];
+
+
 let u6Dom = [
 	
 	[
@@ -108,6 +152,6 @@ let u8Animals = [
 	
 ];
 
-let elementsMag = [owoce, kolory, u6Dom, u7Clothes, u8Animals];
+let elementsMag = [owoce, kolory, u2zwierzeta, u2liczby, u6Dom, u7Clothes, u8Animals];
 
 let pushbuttons = ['a', 'ą', 'b', 'c', 'ć', 'd', 'e', 'ę', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'ł', 'm', 'n', 'ń', 'o', 'ó', 'p', 'q', 'r', 's', 'ś', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ź', 'ż'];
